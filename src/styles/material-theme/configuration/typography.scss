@@ -1,0 +1,17 @@
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons+Outlined';
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap');
+
+$fitfever-typography-config: mat.define-typography-config(
+  $headline-1: mat.define-typography-level(64px, 80px, 400, 'DM Sans', -0.04em),
+  $headline-2: mat.define-typography-level(54px, 62px, 400, 'DM Sans', -0.04em),
+  $headline-3: mat.define-typography-level(48px, 60px, 400, 'DM Sans', -0.04em),
+  $headline-4: mat.define-typography-level(40px, 48px, 700, 'DM Sans', -0.04em),
+  $headline-5: mat.define-typography-level(24px, 30px, 700, 'DM Sans', -0.04em),
+  $headline-6: mat.define-typography-level(20px, 24px, 500, 'DM Sans', -0.04em),
+  $subtitle-1: mat.define-typography-level(16px, 20px, 400, 'DM Sans', -0.04em),
+  $subtitle-2: mat.define-typography-level(14px, 18px, 500, 'DM Sans', -0.03em),
+  $body-1: mat.define-typography-level(16px, 20px, 400, 'DM Sans', -0.01em),
+  $body-2: mat.define-typography-level(14px, 20px, 400, 'DM Sans', -0.01em),
+  $button: mat.define-typography-level(14px, 18px, 500, 'DM Sans', -0.01em),
+  $caption: mat.define-typography-level(12px, 16px, 400, 'DM Sans', -0.01em),
+);
