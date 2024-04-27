@@ -21,5 +21,4 @@ describe('AppComponent', () => {
   });
 
   // Check if has router outlet
-
 });
