@@ -1,9 +1,39 @@
-import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { APP_INITIALIZER, ApplicationConfig } from '@angular/core';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { Router, provideRouter, withDisabledInitialNavigation, withViewTransitions } from '@angular/router';
 
-import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { routes } from './app.routes';
+import { AuthService } from './shared/services/auth.service';
+
+export function initializeApp(
+  _usersDataSvc: AuthService,
+  router: Router
+): () => void {
+  return async (): Promise<void> => {
+    const currentUser = await _usersDataSvc.loadUser();
+
+    // if (currentUser) {
+    //   router.initialNavigation();
+    // } else {
+    //   router.navigate(['unauth']);
+    // }
+  };
+}
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideAnimationsAsync()],
+  providers: [
+    provideRouter(routes, withDisabledInitialNavigation(), withViewTransitions()), 
+    provideAnimationsAsync(),
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { appearance: 'outline' },
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeApp,
+      multi: true,
+      deps: [AuthService, Router],
+    },
+  ],
 };
