@@ -11,10 +11,10 @@ export function initializeApp(
   router: Router
 ): () => void {
   return async (): Promise<void> => {
-    const currentUser = await _usersDataSvc.loadUser();
-
+      router.initialNavigation();
+    
+    // const currentUser = await _usersDataSvc.loadUser();
     // if (currentUser) {
-    //   router.initialNavigation();
     // } else {
     //   router.navigate(['unauth']);
     // }
