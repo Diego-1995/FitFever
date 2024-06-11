@@ -8,8 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "prettier": "npx prettier --write .",
-    "cy:open": "npx cypress open"
+    "prettier": "npx prettier --write ."
   },
   "private": true,
   "dependencies": {
@@ -39,7 +38,6 @@
     "@typescript-eslint/eslint-plugin": "7.2.0",
     "@typescript-eslint/parser": "7.2.0",
     "autoprefixer": "^10.4.19",
-    "cypress": "^13.8.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
