@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "prettier": "npx prettier --write ."
+    "prettier": "npx prettier --write .",
+    "playwright": "npx playwright test"
   },
   "private": true,
   "dependencies": {
@@ -35,6 +36,8 @@
     "@angular-eslint/template-parser": "17.3.0",
     "@angular/cli": "^17.0.0",
     "@angular/compiler-cli": "^17.0.0",
+    "@playwright/test": "^1.44.1",
+    "@types/node": "^20.14.2",
     "@typescript-eslint/eslint-plugin": "7.2.0",
     "@typescript-eslint/parser": "7.2.0",
     "autoprefixer": "^10.4.19",
