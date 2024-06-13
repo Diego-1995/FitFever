@@ -1,1 +1,42 @@
-Login works
+<h1>Welcome to <span class="color-primary-500">Fitfever</span></h1>
+<form
+  class="flex flex-col items-center w-full p-5"
+  autocomplete="off"
+  [formGroup]="formHelper.form"
+  (ngSubmit)="onSubmit()">
+  <mat-form-field class="w-full">
+    <mat-label>Email</mat-label>
+    <input type="email" formControlName="email" matInput />
+    @if (formHelper.form.get('email')?.hasError('required')) {
+    <mat-error>Il campo è obbligatorio</mat-error>
+    } @if (formHelper.form.get('email')?.hasError('email')) {
+    <mat-error>Email non valida</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field class="w-full">
+    <mat-label>Password</mat-label>
+    <input
+      formControlName="password"
+      [type]="isPasswordVisible() ? 'text' : 'password'"
+      matInput />
+    <mat-icon
+      class="color-grey-900"
+      matSuffix
+      (click)="isPasswordVisible.set(!isPasswordVisible())">
+      {{ isPasswordVisible() ? 'visibility' : 'visibility_off' }}
+    </mat-icon>
+    <mat-error>Il campo è obbligatorio</mat-error>
+  </mat-form-field>
+  @if (hasError()) {
+  <p class="color-error-500">Email e/o password errata</p>
+  }
+
+  <button
+    class="block mt-3 w-3/4 !rounded-3xl !p-6"
+    [disabled]="formHelper.form.invalid || isLoading()"
+    [class.spinner]="isLoading()"
+    mat-flat-button
+    color="primary">
+    Login
+  </button>
+</form>

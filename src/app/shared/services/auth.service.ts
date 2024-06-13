@@ -15,6 +15,4 @@ export class AuthService {
   loadUser(): void {
     // TODO: Return the current user
   }
-
-
 }

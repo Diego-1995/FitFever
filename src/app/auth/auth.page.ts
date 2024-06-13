@@ -7,7 +7,7 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   template: `
-    <!-- Navbar Here!!! --> 
+    <!-- Navbar Here!!! -->
     <main>
       <router-outlet></router-outlet>
     </main>

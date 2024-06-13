@@ -1,6 +1,11 @@
 import { APP_INITIALIZER, ApplicationConfig } from '@angular/core';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-import { Router, provideRouter, withDisabledInitialNavigation, withViewTransitions } from '@angular/router';
+import {
+  Router,
+  provideRouter,
+  withDisabledInitialNavigation,
+  withViewTransitions,
+} from '@angular/router';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { routes } from './app.routes';
@@ -11,8 +16,8 @@ export function initializeApp(
   router: Router
 ): () => void {
   return async (): Promise<void> => {
-      router.initialNavigation();
-    
+    router.initialNavigation();
+
     // const currentUser = await _usersDataSvc.loadUser();
     // if (currentUser) {
     // } else {
@@ -23,7 +28,11 @@ export function initializeApp(
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withDisabledInitialNavigation(), withViewTransitions()), 
+    provideRouter(
+      routes,
+      withDisabledInitialNavigation(),
+      withViewTransitions()
+    ),
     provideAnimationsAsync(),
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
