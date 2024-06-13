@@ -5,15 +5,15 @@
 @include mat.core();
 
 // Define the palettes for your theme using http://mcg.mbitson.com/#!?mcgpalette0=%23876bea
-$pal-primary: mat.define-palette($palette-primary);
-$pal-accent: mat.define-palette($palette-accent);
-$pal-error: mat.define-palette($palette-error);
-$pal-warning: mat.define-palette($palette-warning);
-$pal-success: mat.define-palette($palette-success);
-$pal-grey: mat.define-palette($palette-grey);
-$pal-black: mat.define-palette($palette-black);
+$pal-primary: mat.m2-define-palette($palette-primary);
+$pal-accent: mat.m2-define-palette($palette-accent);
+$pal-error: mat.m2-define-palette($palette-error);
+$pal-warning: mat.m2-define-palette($palette-warning);
+$pal-success: mat.m2-define-palette($palette-success);
+$pal-grey: mat.m2-define-palette($palette-grey);
+$pal-black: mat.m2-define-palette($palette-black);
 
-$fitfever-light-theme: mat.define-light-theme(
+$fitfever-light-theme: mat.m2-define-light-theme(
   (
     color: (
       primary: $pal-primary,
